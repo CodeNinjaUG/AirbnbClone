@@ -12,6 +12,7 @@
 /.next/
 /out/
 
+package.json
 # production
 /build
 
