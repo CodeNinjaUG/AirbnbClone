@@ -32,7 +32,7 @@ function Footer() {
           <p> How Airbnb works</p>
           <p> News Room</p>
           <p> INvestors</p>
-          <p> Airbnb Plus</p>
+          <p> Airbnb Changes</p>
           <p> Airbnb Luxe</p>
         </div>
     </div>
