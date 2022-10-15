@@ -13,6 +13,7 @@
 /out/
 
 package.json
+package-lock.json
 # production
 /build
 
