@@ -4,10 +4,9 @@ import { useRouter } from 'next/router';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { format } from 'date-fns';
-function search() {
+function Search() {
   const router = useRouter();
   const { location , startDate, endDate, noOfGuests} = router.query;
-  console.log(router.query);
   const formattedStartDate = format(new Date(startDate),"dd MMMM yy");
   const formattedEndDate = format(new Date(endDate),"dd MMMM yy");
   const range = `${formattedStartDate} - ${formattedEndDate}`;
@@ -32,4 +31,4 @@ function search() {
   )
 }
 
-export default search
+export default Search
