@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { format } from 'date-fns';
-function Search() {
+function Search({searchResults}) {
   const router = useRouter();
   const { location , startDate, endDate, noOfGuests} = router.query;
   const formattedStartDate = format(new Date(startDate),"dd MMMM yy");
@@ -12,7 +12,7 @@ function Search() {
   const range = `${formattedStartDate} - ${formattedEndDate}`;
   return (
     <div>
-         <Header/>
+         <Header placeholder={ `${location} | ${range} | ${noOfGuests} Guests` }/>
             <main className='flex'>
                 <section className='flex-grow pt-14 px-6'>
                     <p className='text-xs'> 300 + Stays - {range}   for {noOfGuests} guests</p>
@@ -32,3 +32,12 @@ function Search() {
 }
 
 export default Search
+export async function getServerSideProps(){
+   const searchResults = await fetch("https://www.jsonkeeper.com/b/5NPS")
+   .then(response => response.json())
+   return {
+     props:{
+        searchResults,
+     }
+   }
+}
