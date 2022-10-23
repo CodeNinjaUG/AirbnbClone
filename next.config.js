@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains:['links.papareact.com'],
+    env:['mapbox_key']
   }
 }
 
