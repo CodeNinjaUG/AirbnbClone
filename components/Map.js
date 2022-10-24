@@ -5,6 +5,8 @@ function Map({searchResults}) {
  const [selectedLocation , setSelectedLocation] = useState({
 
  });
+
+
 //transform
 const coordinates = searchResults.map(result =>({
      longitude:result.long,
@@ -19,9 +21,10 @@ const [ viewport , setViewport] = useState({
     zoom: 14
 })
   return (
+  
     <ReactMapGL
     mapStyle='mapbox://styles/segayi/cl9lnn9k100kx14pa9k9k6y2m'
-    mapboxApiAccessToken={`process.env.mapbox_key`}
+    mapboxAccessToken={process.env.mapbox_key}
     {...viewport}
     onViewportChange={(nextViewport) => setViewport(nextViewport)}
     >
